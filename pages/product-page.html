@@ -1,0 +1,23 @@
+<div class="product-page">
+	<img ng-src="productimages/{{productItem.imageurl}}" alt="{{productItem.name}}">
+	<div class="row md-padding">
+		<div class="col-md-6">
+			<h6 class="md-subhead">PRODUCT DESCRIPTION</h6>
+			<b class="md-subhead">{{productItem.name}} </b>
+			<br>
+			<b class="md-subhead">Price: {{productItem.price}} kr</b>
+			<div class="cart-module">
+				<span class="glyphicon glyphicon-minus-sign md-title" ng-click="amount = amount - 1"></span>
+				<b class="md-title md-padding">{{amount}}</b>
+				<span class="glyphicon glyphicon-plus-sign md-title" ng-click="amount = amount + 1"></span>
+				<button class="btn btn-success">Add to cart</button>
+			</div>
+
+		</div>
+		<hr>
+		<div class="col-md-6">
+			<p>{{productItem.description}}</p>
+			<b>Popularity: {{productItem.popularity}}/10</b>
+		</div>
+	</div>
+</div>

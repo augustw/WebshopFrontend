@@ -1,0 +1,11 @@
+<md-tabs md-dynamic-height md-border-bottom>
+	<md-tab ng-repeat="category in categoryAll" label="{{category.cat.name}}">
+		<div class="product-content">
+			<p>{{category.cat.description}}</p>
+			<hr>
+			<div class="product-item" ng-repeat="item in category.listProduct" ng-include="'pages/modules/product-item.html'"></div>
+					
+		</div>
+	</md-tab>
+</md-tabs>
+
