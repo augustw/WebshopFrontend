@@ -24,13 +24,12 @@ var app = angular.module('webshopApp', ['ngRoute', 'ngMaterial']);
 
             .when('/product-page', {
             	templateUrl : './pages/product-page.html',
-            	controller : 'startController'
+            	controller : 'pagesController'
             });
     });
 
     app.controller('mainController', function($scope) {
     	//product-item hoover "show more"
-
 
     	$scope.showProductPage = function($productItem) {
         		$scope.productItem = $productItem;
@@ -39,25 +38,16 @@ var app = angular.module('webshopApp', ['ngRoute', 'ngMaterial']);
     });
     // create the controller and inject Angular's $scope
     app.controller('startController', function($scope, $http) {
-    	$scope.amount = 1;
-    	
-    	$scope.$watch('amount', function(){ //antal varor kan aldrig vara mindre än 0
-    		if ($scope.amount < 0) {
-    			$scope.amount = 0;
-    		}
-    	});
-
-        	$http({
+    			//alert($scope.getData());
+    			
+    			$http({
     			method:'GET',
     			url:'http://83.255.163.37/webshopbackend/product/getpopular'})
     			.then(function(response) {
     				$scope.productAllPopular = response.data;
-
-    		});
-
+    			});
     	
     }); //end startController
-
 
     app.controller('productsController', function($scope, $http) {
         $http({
@@ -68,11 +58,20 @@ var app = angular.module('webshopApp', ['ngRoute', 'ngMaterial']);
 
     		});
 
-    		
 
-
-    });
+    }); //end productsController
 
     app.controller('aboutController', function($scope) {
         $scope.message = 'Contact us! JK. This is just a demo, about.';
-    });
+    }); // end aboutController
+
+    app.controller('pagesController', function($scope) { //hantering av produktsidan
+        $scope.amount = 1; //antal varor
+    	
+    	$scope.$watch('amount', function(){ //antal varor kan aldrig vara mindre än 0
+    		if ($scope.amount < 0) {
+    			$scope.amount = 0;
+    		}
+    	});
+
+    }); // end aboutController

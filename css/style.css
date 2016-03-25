@@ -7,35 +7,45 @@ body{
 	padding-bottom: 10px;
 }
 main{
-	width:80%;
+	width:75%;
 	max-width: 1280px;
 	margin:0px auto;
 	background: #fff;
 	border-radius: 5px;
+	min-height: 300px;
 }
+
 .product-content{
+	padding-bottom: 40px;
 	padding-top: 15px;
 	margin:0px auto;/*center*/
 	text-align: center; /*center product-item*/
+
 }
 .product-item{
 	width: 350px;
     height: 250px;
-    margin:10px;
+    margin:20px;
     background: white;
     color:black;
     display:inline-block; /*center*/
 
-} .product-item img{ width:100%; height:200px;}
+} .product-item img{ width:100%;}
   .product-item p {padding-top: 5px;}
   	.product-item-shadow { background: black; opacity: 0.4; position: absolute; top:0; width: 350px; height:400px;}
+
 .product-page {padding:20px;} 
-  .product-page img { width:100%; height:500px; display:block; margin:0px auto;}
+  .product-page img { width:100%; float:left;}
   .product-page hr {display: none;}
   .product-page h6 {color: #0A0; font-weight: bold;}
+  .product-page h2 {color: #0A0; font-weight: bold;}
   	.cart-module {padding-top: 10px}
   	.cart-module button {margin:0px 5px 10px 10px;}
   	.cart-module span {color:#0A0;}
+.about {width:60%; margin: 0px auto;}
+.about p {
+	text-align:center;
+}
 
 hr {background-color: #ccc; height: 1px; padding:0;}
 p {	font-family: Helvetica, sans-serif;}
@@ -48,10 +58,45 @@ p {	font-family: Helvetica, sans-serif;}
 	color: white;
 }
 
+/* POPUP */
+.popupShadow {
+	z-index: 3;
+	background: black;
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.8;
+} .popupShadow span{font-size: 3em; color:white; position:fixed; top:1%; right: 1%; z-index: 5;}
+
+.popupImage {z-index: 4; padding: 10px; position: fixed; width: 70%; top: 5%; left: 15%; text-align: center; padding: 20px;
+} .popupImage img { width: 100%; }
+/* POPUP END */
+
 /*	RWD	 */
+
+
+@media only screen and (max-device-width: 1039px) {
+	main{width: 100%;}
+}
 
 @media only screen and (max-width: 991px) { /*när col-md-6 kollapsar i main */
     .product-page hr {
         display: block; /*visa hr för att urskilja divs*/
-    }
+    } .product-page img {margin-bottom: 20px;}
+    h2 {font-size: 2em;}
+    p {font-size: 2em;}
+    b {font-size: 2em;}
+    button {font-size: 2em;}
+    span {font-size: 2em;}
+    .product-item {margin-bottom: 30px;}
+}
+
+
+@media only screen and (max-device-width: 799px) {
+	.product-item {
+		width: 95%;
+		height:auto;
+	} .product-item p {font-size: 2.5em;}
 }

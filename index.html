@@ -1,5 +1,6 @@
 <html ng-app="webshopApp">
     <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- load bootstrap and fontawesome via CDN -->
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
@@ -17,7 +18,7 @@
 			  integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
 			  crossorigin="anonymous"></script>
       <!-- End Angular -->
-
+      <script src="js/js.js"></script>
       <script src="js/script.js"></script>
     </head>
     <body ng-controller="mainController">
@@ -48,6 +49,7 @@
             <div ng-view></div>
 
         </main>
-
+        <div class="popupShadow"><span class="glyphicon glyphicon-remove-circle" title="Close"></span></div>
+        <div class="popupImage"></div>
     </body>
     </html>
