@@ -1,4 +1,6 @@
 <a ng-href="#product-page" ng-click="showProductPage(item)">
+	<div ng-class="item.sale > 0 ? 'product-item-sale' : 'display-none'">{{item.sale * 100}}%</div>
+	<span class="product-item-hover">Show more...</span>
 	<img ng-src="productimages/{{item.imageurl}}" alt="Image not available">
 	<br><p>{{item.name}}</p>
 </a>

@@ -1,0 +1,31 @@
+<div class="shopping-cart">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th class="hide-on-small"></th>
+				<th>Name</th>
+				<th>Quantity</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<tr ng-repeat="item in arrCartItems">
+				
+				<td class="hide-on-small"><img ng-src="productimages/{{item.imageurl}}" alt="Image not available"></td>
+				<td ><a href="#product-page" ng-click="showProductPage(item)">{{item.name}}</a></td>
+				<td>{{item.quantity}} st</td>
+				<td>{{item.price | noDecimal}} kr</td>
+
+			</tr>
+		
+			<tr>
+				<td class="hide-on-small"></td>
+				<td colspan="2" ></td>
+				<th>Total: {{totalPrice | noDecimal}} kr</th>
+			</tr>
+		</tbody>
+	</table>
+
+	<a class="btn btn-success pull-right" href="">Go to payment</a>
+</div>

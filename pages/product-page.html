@@ -1,18 +1,20 @@
 <div class="product-page">
-	
-
 	<div class="row md-padding">
 		<div class="col-md-8">
 			<img ng-src="productimages/{{productItem.imageurl}}" class="product-image" alt="{{productItem.name}}">
+			<p class="product-image-enlarge">Click to enlarge</p>
 		</div>
 		<div class="col-md-4">
 			<h2>{{productItem.name}}</h2>
-			<b class="md-subhead">Price: {{productItem.price}} kr</b>
+			<b ng-class="{'price-del': productPrice.sale === true}">Price: {{productItem.price}} kr</b>
+			<b ng-class="productPrice.sale === true ? 'product-sale' : 'display-none'">
+				Sale price: {{productPrice.value | noDecimal}} kr
+			</b>
 			<div class="cart-module">
-				<span class="glyphicon glyphicon-minus-sign md-title" ng-click="amount = amount - 1"></span>
-				<b class="md-title md-padding">{{amount}}</b>
-				<span class="glyphicon glyphicon-plus-sign md-title" ng-click="amount = amount + 1"></span>
-				<button class="btn btn-success">Add to cart</button>
+				<span class="glyphicon glyphicon-minus-sign" ng-click="quantity = quantity - 1"></span>
+				<b class="md-padding">{{quantity}}</b>
+				<span class="glyphicon glyphicon-plus-sign" ng-click="quantity = quantity + 1"></span>
+				<a href="" ng-click="addToCart(productItem.id, productItem.name, productItem.imageurl, productPrice.value, quantity)" class="btn btn-success">Add to cart</a>
 			</div>
 
 		</div>
