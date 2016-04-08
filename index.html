@@ -24,7 +24,7 @@
     <body ng-controller="mainController">
 
         <!-- HEADER AND NAVBAR -->
-        <header>
+       <!-- <header>
             <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
@@ -38,10 +38,15 @@
                 </ul>
             </div>
             </nav>
-        </header>
+        </header> 
+        -->
 
-
-
+        <menu class="menu md-whiteframe-5dp" ng-include="'pages/modules/menu-list.html'"></menu>
+        <div class="menu-burger"><span class="glyphicon glyphicon-align-justify"></span></div>
+        <menu class="menu-small md-whiteframe-5dp">
+        	<ng-include src="'pages/modules/menu-list.html'"></ng-include>
+        	<a class="menu-small-hide"><span class="fa fa-arrow-up"></span></a>
+        </menu>
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
         <h1>{{header}}</h1>
         <main class="md-whiteframe-10dp">
